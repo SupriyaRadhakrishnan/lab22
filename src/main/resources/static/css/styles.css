@@ -1,0 +1,30 @@
+h1 {
+	padding: 60px;
+	text-align: center;
+	background: #1abc9c;
+	color: white;
+	font-size: 30px;
+}
+
+body {
+	background-image: url(/images/background.jpg);
+	background-repeat: no-repeat; opacity : 0.75;
+	background-size: cover;
+	opacity: 0.75;
+}
+
+p{
+	
+	font: italic small-caps bold 12px/30px Georgia, serif;
+}
+
+h2
+{
+	font: Georgia;
+	 font-weight: bold;
+}
+
+a
+{
+	
+}
