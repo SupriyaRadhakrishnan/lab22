@@ -17,7 +17,7 @@
 <div class="rows">
 <c:forEach var="sp" items="${sp}">
 <div class="cols">
-<img src="/images/${sp.getImg()}" width="150" height="150"/>
+<img src="/images/${sp.getImg()}" width="150" height="150"/><br />
 <a id ="spname" href="/speciality?name=${sp.getName()}&price=${sp.getPrice()}">${sp.getName()}</a>
 </div>
 </c:forEach>
