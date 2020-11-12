@@ -11,11 +11,10 @@
 </head>
 <body>
 <h1>Thanks for the Review</h1>
-<p>Your Name : ${yourname}</p> <br /><br /><br />
+<p>Your Name : ${yourname}</p> 
 <p>Comments</p>
-<p><c:out value="${comment}"></c:out></p> <br /><br /><br />
-<p>Rating : ${rating} </p><br />
-<br /><br /><br />
+<p><c:out value="${comment}"></c:out></p> 
+<p>Rating : ${rating} </p>
 <a href=/homepage>Back To HomePage</a>
 </body>
 </html>
