@@ -21,7 +21,7 @@
 <p>Select you toppings:</p>
 <c:forEach var="topping" items="${pizzaTopping}">
 <div>
-  <input type="checkbox" id="${topping}" name="selectedtopping">
+  <input type="checkbox" id="${topping}" value ="${topping}" name="selectedtopping">
   <label for="${topping}">${topping}</label>
 </div>
 </c:forEach>

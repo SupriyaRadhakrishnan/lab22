@@ -6,7 +6,10 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -34,30 +37,22 @@ public class RestaurantController {
 
 	@GetMapping("/custom")
 	public String custom(Model model) {
-		List<String> pizzaTopping=new ArrayList<>();
-		pizzaTopping.add("Pepperoni");
-		pizzaTopping.add("Sausage");
-		pizzaTopping.add("Chicken");
-		pizzaTopping.add("Mushroom");
-		pizzaTopping.add("Olive");
-		pizzaTopping.add("Green Pepper");
-		pizzaTopping.add("Onion");
-		pizzaTopping.add("Banana Pepper");
-		pizzaTopping.add("Anchovies");
-		pizzaTopping.add("Pineapple");
-		
+	    String[] pizzaTopping= {"Pepperoni","Sausage","Chicken","Mushroom","Olive","Green Pepper","Onion","Banana Pepper","Anchovies","Pineapple"};	
 		model.addAttribute("pizzaTopping",pizzaTopping);
 		return "custom";
 	}
+	
 
-	@PostMapping("/result")
+	@RequestMapping(value= "/result" ,method = {RequestMethod.GET,RequestMethod.POST})
 	public String result(@RequestParam(required = false) String splinstruction,
-			@RequestParam(required = false) boolean upgrade, @RequestParam String size,@RequestParam(required=false) String[] selected, @RequestParam(value = "selectedtopping", required = false) List<String> selectedtopping, Model model) {
+			@RequestParam(required = false) boolean upgrade, @RequestParam String size,@RequestParam(required=false) String[] selected, @RequestParam(defaultValue = "", value = "selectedtopping", required = false) String[] selectedtopping, Model model) {
 
 	
-		model.addAttribute("toppings", selectedtopping.size());
+		model.addAttribute("toppings", selectedtopping.length);
+
 		model.addAttribute("selectedtopping",selectedtopping);      
-		
+		//System.out.println(selectedtopping[0]);
+		//System.out.println(selectedtopping.length);
 		model.addAttribute("size", size);
 		if (upgrade)
 			model.addAttribute("upgrade", "Yes");
@@ -70,21 +65,21 @@ public class RestaurantController {
 		if (size.equals("Small")) {
 			price += 7;
 
-			if (selectedtopping.size()>0) {
-				price += (selectedtopping.size() * 0.50);
+			if (selectedtopping.length > 0) {
+				price += (selectedtopping.length * 0.50);
 			}
 
 		} else if (size.equals("Medium")) {
 			price += 10;
 
-			if (selectedtopping.size() > 0) {
-				price += (selectedtopping.size() * 1.00);
+			if (selectedtopping.length > 0) {
+				price += (selectedtopping.length * 1.00);
 			}
 
 		} else if (size.equals("Large")) {
 			price += 12;
-			if (selectedtopping.size() >0) {
-				price += (selectedtopping.size() * 1.25);
+			if (selectedtopping.length >0) {
+				price += (selectedtopping.length * 1.25);
 			}
 		}
 		if (upgrade) {
