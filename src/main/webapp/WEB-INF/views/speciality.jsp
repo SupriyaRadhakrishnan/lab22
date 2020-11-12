@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +12,9 @@
 <body>
 <h1>Speciality Pizza :  ${name}</h1>
 <br /><br /><br /> 
-<p>Name : </p><i>${name}</i>
+<p>Name : ${name}</p>
 <br />
-<p>Price : </p>$<i>${price}</i>
+<p>Price : $ <fmt:formatNumber type="number" maxFractionDigits="2" value="${price}"></fmt:formatNumber></p>
 <br />
 <br />
 <br />

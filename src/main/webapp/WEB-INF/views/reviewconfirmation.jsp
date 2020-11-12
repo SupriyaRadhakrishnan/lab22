@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +11,10 @@
 </head>
 <body>
 <h1>Thanks for the Review</h1>
-<p>Your Name : </p>${yourname} <br /><br /><br />
+<p>Your Name : ${yourname}</p> <br /><br /><br />
 <p>Comments</p>
-${comment} <br /><br /><br />
-<p>Rating : </p>${rating} <br />
+<p><c:out value="${comment}"></c:out></p> <br /><br /><br />
+<p>Rating : ${rating} </p><br />
 <br /><br /><br />
 <a href=/homepage>Back To HomePage</a>
 </body>

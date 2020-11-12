@@ -1,13 +1,13 @@
 h1 {
 	padding: 60px;
 	text-align: center;
-	background: #1abc9c;
+	background: black;
 	color: white;
 	font-size: 30px;
 }
 
 body {
-	background-image: url(/images/background.jpg);
+	background-image: url(/images/Pizza-Background.jpg);
 	background-repeat: no-repeat; opacity : 0.75;
 	background-size: cover;
 	opacity: 0.75;
@@ -15,16 +15,45 @@ body {
 
 p{
 	
-	font: italic small-caps bold 12px/30px Georgia, serif;
+	font: OCR A Std, monospace;
+	font-weight: bold;
+	 font-size: 20px;
 }
 
-h2
-{
-	font: Georgia;
-	 font-weight: bold;
-}
-
-a
+#datetime
 {
 	
+	font:Andale Mono, monospace
+}
+h2
+{
+	font: OCR A Std, monospace;
+	font-weight: bold;
+}
+
+#spname
+{
+	font: italic small-caps bold 20px/40px Georgia, serif;
+	color:black;
+	 font-size: 15px;
+}
+
+#offer
+{
+	font: Blippo, fantasy;
+	color:red;
+	 font-size: 25px;
+}
+
+.cols {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
